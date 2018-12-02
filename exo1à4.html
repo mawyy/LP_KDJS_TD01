@@ -1,0 +1,102 @@
+<html>
+
+<head>
+<title>TD 1</title>
+</head>
+
+<script type="text/javascript">
+
+
+//Exo 1
+/*var etudiant ={
+    nom : "WU",
+    prenom : "Marie Aude",
+    numEtu : 012345 ,
+    date : [01, 01, 1994]
+}*/
+
+//Exo 2
+function Etudiant (nom, prenom, numEtu, date){
+    this.nom = nom; 
+    this.prenom = prenom; 
+    this.numEtu = numEtu;
+    this.date = date; 
+    this.presenter = function(){ 
+        console.log("Je suis " + this.prenom + " " + this.nom 
+        + ". Mon n° étudiant est " + this.numEtu + " et je suis né(e) le " 
+        + this.date[0] + "/" + this.date[1] + "/" + this.date[2]);
+    }; 
+    this.age = function(){
+        console.log("J'ai " + (2018-this.date[2]) + " ans")
+    };
+}
+var jean = new Etudiant ("Pierre", "Jean", 112346, [01,02,2000]);
+jean.presenter();
+jean.age();
+var elsa = new Etudiant ("Dupont", "Elsa", 112354, [24,06,1998]);
+elsa.presenter();
+elsa.age();
+
+//Exo 3
+var Personne = {
+    nom: "",
+    prenom: "",
+    date: [1, 1, 1977],
+    //Exo 4
+    taille: 185,
+
+    init: function(nom, prenom, date, taille){
+        this.nom = nom;
+        this.prenom = prenom;
+        this.date = date;
+        this.taille = taille;
+    },
+
+    decrirePers: function(){ return("Je suis " + this.prenom + " " + this.nom 
+        + " et je suis né(e) le " 
+        + this.date[0] + "/" + this.date[1] + "/" + this.date[2]) 
+        + ". Je mesure " + this.taille + " cm. "; 
+    },
+    direAge: function(){
+        console.log("J'ai " + (2018-this.date[2]) + " ans")
+    }
+        
+};
+var pers = Object.create(Personne);
+pers.nom = "Dupont";
+pers.prenom = "Michel";
+pers.date = [12, 5, 1971];
+pers.taille = 188;
+
+var pers2 = Object.create(Personne);
+pers2.init("Francois", "Bob", [12, 4, 1981], 173);
+
+console.log(pers.decrirePers());
+console.log(pers2.decrirePers());
+
+var Professeur = Object.create(Personne); // On cree la reference a l’objet Personne
+Professeur.mailProf = "mail@mail.fr";
+Professeur.initProfesseur = function(nom, prenom, date, taille, mailProf){
+    // On appelle la fonction de l’objet Personne
+    this.init(nom, prenom, date, taille);
+
+    this.mailProf = mailProf;
+    this.decrireProf = function(){ console.log(this.decrirePers() + "Mon mail est " + this.mailProf ) };
+};
+var prof1 = Object.create(Professeur);
+prof1.initProfesseur("Durand", "Kevin", [26, 7, 1991], 189, "k_durand@u-bordeaux.fr");
+prof1.decrireProf();
+var prof2 = Object.create(Professeur);
+prof2.initProfesseur("Cartier", "Julie", [15, 3, 1986], 170, "j_cartier@u-bordeaux.fr");
+prof2.decrireProf();
+
+//Exo 4, on définit des personnes avec leur taille
+var prof3 = Object.create(Professeur);
+prof3.initProfesseur("Jesaispas", "John", [4, 7, 1984], 189, "j_jsp@u-bordeaux.fr");
+prof3.decrireProf();
+var prof4 = Object.create(Professeur);
+prof4.initProfesseur("Fleur", "Béatrice", [30, 11, 1955], 160, "b_fleur@u-bordeaux.fr");
+prof4.decrireProf();
+
+</script>
+</html>

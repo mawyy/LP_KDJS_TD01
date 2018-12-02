@@ -1,0 +1,7 @@
+$('div').hover(function(){
+	$(this).children('p').each(function(){
+		console.log($(this).text());
+	});
+});
+
+--> Ce code affiche dans la console le texte du paragraphe lorqu'on survole la div qui le contient

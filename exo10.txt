@@ -1,0 +1,14 @@
+1 $('p').append('Javascript<br />');
+--> Ajoute le texte 'Javascript' suivi d'un saut à la ligne à la suite des paragraphes <p>
+
+2 $('p').prepend('<br />Javascript');
+--> Ajoute un saut à la ligne puis le texte 'Javascript' au-dessus de tous les paragraphes <p>
+
+3 $('p').remove();
+--> Supprime tous les paragraphes <p>
+
+4 $('ul').before('Before');
+--> Ajoute le texte "Before" avant chaque liste <ul>
+
+5 $('ul').after('After');
+--> Ajoute le texte "After" après chaque liste <ul>

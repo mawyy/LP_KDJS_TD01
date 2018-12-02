@@ -1,0 +1,11 @@
+1 $('<strong>SUPER!</strong>').appendTo('li');
+--> Ajoute 'SUPER!' en gras en premier enfant de chaque <li>
+
+2 $('<strong>OK!</strong>').prependTo('li');
+--> Ajoute 'OK!' en gras en dernier enfant de chaque <li>
+
+3 $('<strong>HEY!</strong>').insertBefore('li');
+--> Ajoute 'HEY!' en gras avant chaque <li>
+
+4 $('<strong>OH!</strong>').insertAfter('li');
+--> Ajoute 'OH!' en gras après chaque <li>

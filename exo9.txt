@@ -1,0 +1,17 @@
+1 console.log($('ul').text());
+--> Permet de récupérer tous les noeuds de texte dans les <ul>
+
+2 console.log($('ul').html());
+--> Permet de récupérer tous les noeuds HTML et leurs noeuds de texte dans les listes <ul>
+
+3 $('p').text('<a href="#">lien</a>');
+--> Permet d'attribuer un noeud de texte dans tous les paragraphes <p>
+
+4 $('p').html('<a href="#">lien</a>');
+--> Permet d'attribuer un noeud de lien html dans tous les paragraphes <p>
+
+5 console.log($('input:text[name=nom]').text());
+--> Permet d'afficher la valeur dans l'input de nom mais n'affiche rien car un input texte ne comporte pas de noeud de texte
+
+6 console.log($('input:text[name=nom]').val());
+--> Permet d'afficher la valeur dans l'input de nom

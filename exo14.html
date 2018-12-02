@@ -1,0 +1,81 @@
+<!-- KIT DE SURVIE JS - IUT INFORMATIQUE BORDEAUX -->
+<!DOCTYPE html>
+<head>
+ 
+    <meta charset="utf-8" />
+ 
+    <title>Exercice 14</title>
+    <meta name="description" content="Description de la page">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+    <style>
+    	body{ font-family: 'Quicksand', sans-serif; }
+	</style>
+
+    <script src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+        var users = [];
+
+        var Utilisateur = function (nom, prenom, age, sexe, description) {
+          this.nom = nom;
+          this.prenom = prenom;
+          this.age = age;
+          this.sexe = sexe;
+          this.description = description;
+
+          this.affiche = function() {
+            console.log("Je suis " + this.prenom + " "+ this.nom 
+                      + ", j'ai " + this.age 
+                      + " ans et je suis de sexe " + this.sexe 
+                      + ". " + this.description);
+          }
+        }
+
+        $(document).ready(function(){
+          $('#formulaire').submit(function(e) {
+            e.preventDefault();
+            var utilisateur = new Utilisateur(
+              $("input#nom").val(),
+              $("input#prenom").val(),
+              $("input#age").val(),
+              $("select#sexe").val(),
+              $("textarea#description").val()
+            );
+
+            users.push(utilisateur);
+            utilisateur.affiche();
+          })
+        })
+    	});
+   	</script>
+</head>
+<body>
+	<form id="formulaire">
+        <div>
+          Nom : <input type="text" name="nom" id="nom">
+        </div>
+        <div>
+          Prénom : <input type="text" name="prenom" id="prenom">
+        </div>
+        <div>
+          Age : <input type="text" name="age" id="age">
+        </div>
+        <div>
+          Sexe : 
+          <select name="sexe" id="sexe">
+            <option value="masculin">M</option>
+            <option value="féminin">F</option>
+          </select>
+        </div>
+        <div>
+          Description : 
+          <textarea name="description" id="description"></textarea>
+        </div>
+        <div>
+          <input type="submit" value="Valider">
+        </div>
+      </form>
+</body>
+ 
+</html>
